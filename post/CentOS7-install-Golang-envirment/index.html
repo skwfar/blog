@@ -1,22 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://skwfar.github.io</id>
-    <title>笔记</title>
-    <updated>2020-08-11T07:27:00.045Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://skwfar.github.io"/>
-    <link rel="self" href="https://skwfar.github.io/atom.xml"/>
-    <subtitle>Sic mundus creatus est</subtitle>
-    <logo>https://skwfar.github.io/images/avatar.png</logo>
-    <icon>https://skwfar.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 笔记</rights>
-    <entry>
-        <title type="html"><![CDATA[在CentOS7上安装Golang环境]]></title>
-        <id>https://skwfar.github.io/post/CentOS7-install-Golang-envirment/</id>
-        <link href="https://skwfar.github.io/post/CentOS7-install-Golang-envirment/">
-        </link>
-        <updated>2020-03-16T01:44:35.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="背景">背景</h2>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>在CentOS7上安装Golang环境 | 笔记</title>
+<link rel="shortcut icon" href="https://skwfar.github.io/favicon.ico?v=1597130812417">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://skwfar.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="在CentOS7上安装Golang环境 | 笔记 - Atom Feed" href="https://skwfar.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="背景
+安装好了Vim8，那么，安装Golang环境就是必不可少的了，使用Linux系统进行编程，除了Vim，还需要安装一些插件来提升编程体验。
+一、安装Golang
+1.使用yum安装
+我们可以使用CentOS自带的指令进行Golang的安..." />
+    <meta name="keywords" content="CentOS,Golang" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://skwfar.github.io">
+  <img class="avatar" src="https://skwfar.github.io/images/avatar.png?v=1597130812417" alt="">
+  </a>
+  <h1 class="site-title">
+    笔记
+  </h1>
+  <p class="site-description">
+    Sic mundus creatus est
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              在CentOS7上安装Golang环境
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-16
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://skwfar.github.io/tag/PhHVze0Eh/" class="post-tag">
+                  # CentOS
+                </a>
+              
+                <a href="https://skwfar.github.io/tag/yUaGJL1LBh/" class="post-tag">
+                  # Golang
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="背景">背景</h2>
 <p>安装好了Vim8，那么，安装Golang环境就是必不可少的了，使用Linux系统进行编程，除了Vim，还需要安装一些插件来提升编程体验。</p>
 <h3 id="一-安装golang">一、安装Golang</h3>
 <h5 id="1使用yum安装">1.使用yum安装</h5>
@@ -193,74 +277,104 @@ let g:tagbar_type_go = {
 </code></pre>
 <p>配置因人而异，配置写入完成并保存后，在Vim中按F9召唤tagbar，按F10召唤NERDTree，需要其他快捷键可以在配置文件中更改。</p>
 <p>在CentOS上的Golang环境就配置完成啦。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[在CentOS7上安装Vim8]]></title>
-        <id>https://skwfar.github.io/post/CentOS7-install-Vim8/</id>
-        <link href="https://skwfar.github.io/post/CentOS7-install-Vim8/">
-        </link>
-        <updated>2020-03-15T01:34:15.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="背景">背景</h2>
-<p>由于公司电脑是内网，访问外网的VDI配置奇差无比，也为了能不用重复配置环境，萌生了在服务器上进行编程的想法，正好手上有一台腾讯云的服务器可以使用，服务器上为了宝塔插件的兼容性选择了安装CentOS7，CentOS自带的Vim版本太低，无法安装YouCompleteMe插件，所以开始升级服务器上的Vim。</p>
-<h3 id="一-卸载旧版本vim">一、卸载旧版本Vim</h3>
-<p>自带的可以使用yum卸载</p>
-<pre><code>yum remove -y vim*
-</code></pre>
-<p>编译安装的直接删除安装目录</p>
-<pre><code>rm -rf /usr/local/share/vim/vim82
-</code></pre>
-<h3 id="二-安装gcc编译器">二、安装GCC编译器</h3>
-<pre><code>yum install -y gcc gcc-c++ kernel-devel
-</code></pre>
-<h3 id="三-编译安装">三、编译安装</h3>
-<ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
 <li>
-<p>下载vim</p>
-<pre><code>git clone https://github.com/vim/vim.git
-</code></pre>
-<p>下载后进入vim目录进行配置，编译，安装</p>
+<ul>
+<li><a href="#%E8%83%8C%E6%99%AF">背景</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%AE%89%E8%A3%85golang">一、安装Golang</a><br>
+*
+<ul>
+<li><a href="#1%E4%BD%BF%E7%94%A8yum%E5%AE%89%E8%A3%85">1.使用yum安装</a></li>
+<li><a href="#2%E4%BD%BF%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85">2.使用二进制文件安装</a></li>
+</ul>
 </li>
-<li>
-<p>配置</p>
-<pre><code>./configure --enable-multibyte --enable-python3interp=yes --with-python3-config-dir=/usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu --enable-fail-if-missing
-</code></pre>
-<p>由于我本地安装了python3.6， 所以只开启python3的支持，config路径会有所不同，需要找到python安装目录进行确认</p>
-<p>参数说明：</p>
-<p>–with-features=huge：支持最大特性</p>
-<p>–enable-rubyinterp：启用Vim对ruby编写的插件的支持</p>
-<p>–enable-pythoninterp：启用Vim对python编写的插件的支持</p>
-<p>-enable-python3interp：启用对python3编写的插件的支持</p>
-<p>–enable-luainterp：启用Vim对lua编写的插件的支持</p>
-<p>–enable-perlinterp：启用Vim对perl编写的插件的支持</p>
-<p>–enable-multibyte：多字节支持 可以在Vim中输入中文</p>
-<p>--enable-fontset：支持字体设置</p>
-<p>–enable-cscope：启用Vim对cscope支持</p>
-<p>–enable-gui=gtk2：gtk2支持,也可以使用gnome，表示生成gvim</p>
-<p>-–with-python-config-dir 指定 python配置 路径</p>
-<p>--with-python3-config-dir 指定python3配置路径</p>
-<p>–-prefix：编译安装路径</p>
-<p>--with-compiledby：编译者</p>
-<p>--enable-fail-if-missing 表示问题会提示报错，并停止</p>
+<li><a href="#%E4%BA%8C-%E9%85%8D%E7%BD%AEvim">二、配置Vim</a><br>
+*
+<ul>
+<li><a href="#1%E5%AE%89%E8%A3%85vundle">1.安装Vundle</a></li>
+<li><a href="#2%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6">2.安装插件</a></li>
+<li><a href="#3%E5%AE%89%E8%A3%85vim-go%E4%BE%9D%E8%B5%96">3.安装vim-go依赖</a></li>
+<li><a href="#4%E7%BC%96%E8%AF%91youcompleteme">4.编译YouCompleteMe</a></li>
+<li><a href="#5%E5%86%99%E5%85%A5%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE">5.写入插件配置</a></li>
+</ul>
 </li>
-<li>
-<p>编译</p>
-<pre><code>make
-</code></pre>
-<p>如果make的时候出错，执行</p>
-<pre><code>make distclean
-</code></pre>
+</ul>
 </li>
-<li>
-<p>安装</p>
-<pre><code>make install
-</code></pre>
+</ul>
 </li>
-</ol>
-<h3 id="四-查看vim版本">四、查看vim版本</h3>
-<pre><code>:verison
-</code></pre>
-<p>查看到python3的选项前缀为+号，既是安装成功啦，下面可以愉快的安装依赖python的插件</p>
-]]></content>
-    </entry>
-</feed>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://skwfar.github.io/post/CentOS7-install-Vim8/">
+              <h3 class="post-title">
+                在CentOS7上安装Vim8
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  skwfar
+  <a class="rss" href="https://skwfar.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
