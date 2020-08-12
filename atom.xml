@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://skwfar.github.io</id>
     <title>笔记</title>
-    <updated>2020-08-11T07:38:55.296Z</updated>
+    <updated>2020-08-12T03:49:12.790Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://skwfar.github.io"/>
     <link rel="self" href="https://skwfar.github.io/atom.xml"/>
@@ -261,6 +261,137 @@ let g:tagbar_type_go = {
 <pre><code>:verison
 </code></pre>
 <p>查看到python3的选项前缀为+号，既是安装成功啦，下面可以愉快的安装依赖python的插件</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git的使用方法和一些想法]]></title>
+        <id>https://skwfar.github.io/post/git/</id>
+        <link href="https://skwfar.github.io/post/git/">
+        </link>
+        <updated>2017-01-21T12:21:46.000Z</updated>
+        <content type="html"><![CDATA[<p>Git 是一个开源的分布式版本控制系统，一直都有听说过Git，但是却没有实际使用过，虽然觉得是一个很不错的工具，但对于这种需要撸命令行的会有稍微的抵触，最近开始使用是因为要与朋友合作开发参加比赛的项目，不得不用到版本控制，而搭建Hexo也需要用到Git，那么记录一下学习的过程和想法。</p>
+<p>###安装<br>
+Windows: 到官网https://git-scm.com/downloads选Windows安装包下载安装<br>
+Linux:</p>
+<pre><code>apt-get install git 或 yum install git
+</code></pre>
+<p>###配置<br>
+安装完后，打开命令行 (Windows 右键 Git Bash here)，配置名字和邮箱，这会显示在以后的commit中。</p>
+<p>###配置<br>
+安装完后，打开命令行 (Windows 右键 Git Bash here)，配置名字和邮箱，这会显示在以后的commit中。</p>
+<pre><code>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;email@example.com&quot;
+</code></pre>
+<p>###初始化</p>
+<pre><code>git init
+</code></pre>
+<p>初始化一个仓库 (默认 master 分支)，会在当前文件夹下面生成一个隐藏文件夹 .git</p>
+<p>初始化一个仓库 (默认 master 分支)，会在当前文件夹下面生成一个隐藏文件夹 .git</p>
+<p>###添加修改<br>
+新建一个文件夹，使用命令行，进入到文件夹中，然后新建一个 hello.txt</p>
+<p>###提交修改<br>
+通过 add 命令将该目录下所有文件提交到暂存区 (也可以将 . 换成需要单独提交的文件名)</p>
+<p>然后通过 commit 命令将暂存区的所有内容提交到当前分支</p>
+<pre><code>git add .
+git commit -m &quot;This is my first commit&quot;
+</code></pre>
+<p>###撤销修改<br>
+修改一下 hello.txt 文件，然后通过 diff 命令查看当前文件与暂存区中的文件的不同，如果需要撤销修改，则通过 checkout 命令进行撤销</p>
+<pre><code>git diff hello.txt
+git checkout -- hello.txt
+</code></pre>
+<p>再修改一下 hello.txt 文件或者再建一个文件，然后就可以通过 status 命令查看当前那个文件被修改了，新建了那个文件。</p>
+<pre><code>git status
+</code></pre>
+<p>###版本回退<br>
+然后再提交一下，如果这时候想回到第一次提交那会，就可以通过 log 命令查看提交历史和显示提交对象的哈希值，然后通过 reset 命令指定哈希值 (前四位就够了) 回到想要回到的commit。</p>
+<pre><code>git log
+git reset --hard xxxx
+</code></pre>
+<p>如果感觉太繁琐，可以加上参数  --pretty=oneline，只会显示版本号和提交时的备注信息</p>
+<pre><code>git log --pretty=oneline
+</code></pre>
+<p>git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）</p>
+<p>例如执行以下代码退回到上一个版本</p>
+<pre><code> git reset --hard HEAD~1
+</code></pre>
+<p>###分支管理<br>
+分支的特性将 Git 从版本控制系统家族里区分出来。使用分支可以从开发主线上分离开来，然后在新的分支上解决特定问题，同时不会影响主线。其它的一些版本控制系统，创建分支需要创建整个源代码目录的副本。</p>
+<p>在 Git 中提交时，会保存一个提交（commit）对象，该对象包含一个指向暂存内容快照的指针，包含本次提交的作者等相关附属信息，包含零个或多个指向该提交对 象的父对象指针：首次提交是没有直接祖先的，普通提交有一个祖先，由两个或多个分支合并产生的提交则有多个祖先。</p>
+<p>###创建合并分支<br>
+使用 checkout 命令切换分支，-b 参数表示如果该分支不存在就先创建分支然后切换。</p>
+<p><code>$ git checkout -b fix-bug</code><br>
+然后在 fix-bug分支下修改文件添加提交后，在再切换回主分支：</p>
+<p><code>$ git checkout master</code><br>
+可以看到主分支里的文件并没有被修改，例如在 fix-bug 分支下开发完成后，在 master 分支下就可以使用 merge 命令合并分支就可以看到修改的结果了。</p>
+<p><code>$ git merge fix-bug</code><br>
+###解决冲突<br>
+切换到 fix-bug分支修改文件，添加提交；切换回 master 没有获取  fix-bug分支的修改后的提交的同时也修改文件，添加提交，然后合并。这时候系统就不知道保留谁的修改，还是都保留，就会产生冲突。</p>
+<pre><code>Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+<p>打开文件就会发现文件里面有一些符号：</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+From master
+=======
+From fix-bug
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
+</code></pre>
+<p>这时候只需要删掉不需要的内容 (或者都保留) 重新提交，就可以解决冲突啦。</p>
+<p>上面只是简单的Git操作和解决冲突的方法，Git是一个非常好的版本控制系统，经过简单的学习就可以进行版本控制，但是更加复杂的操作需要理解Git设计时的理念才能更好的使用。以前一个人写代码的时候总是随心所欲，但是没有版本控制会导致若出现了BUG，无法比对以前的代码，也没有办法找回历史的代码，是灾难性的，只能重新回忆并重新编写代码，作为刚接触Git的菜鸟而言，还需要继续加深理解。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于 Markdown]]></title>
+        <id>https://skwfar.github.io/post/about-markdown/</id>
+        <link href="https://skwfar.github.io/post/about-markdown/">
+        </link>
+        <updated>2016-07-27T13:51:12.000Z</updated>
+        <content type="html"><![CDATA[<p>由于搭建静态博客Hexo的原因，第一次认真的学习了一下关于Markdown的写法，记录一下</p>
+<h2 id="基本语法">基本语法</h2>
+<h3 id="标题">标题</h3>
+<pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre>
+<p>分别对应HTML中的<code>&lt;h1&gt;一级标题&lt;/h1&gt;</code>，以此类推。</p>
+<p><code>**用两个星号标记起来，表示加粗**</code>，<code>*一个星号，表示斜体*</code>，<code>~~这样子表示删除~~</code>，这些就是最基本的语法了。</p>
+<h2 id="插入链接">插入链接</h2>
+<p><strong>插入链接:</strong><br>
+这是一个 <code>[链接](http://url.com/)</code></p>
+<p><strong>快速链接:</strong><br>
+只需在网址头尾用尖括号包裹，比如<code>&lt;http://url.com&gt;</code></p>
+<p><strong>特别支持:</strong><br>
+<code>[Google (target=_blank id=google_link)](google.com)</code>  其中内容括号内的<code>target=_blank id=google_link</code> 会自动扩展到最终 HTML 对应 A 标签下的属性，另外，<code>google.com</code> 作为一个域名，不需要补全<code>http://</code>, 最终会自动补全。</p>
+<h2 id="插入图片">插入图片</h2>
+<p>跟插入链接的方式很像，就是前面多一个<code>!</code>， 但是在一般的客户端编辑器，比如 <a href="http://markeditor.com">MarkEditor</a> 中直接拖入图片就可以。<br>
+<code>![)](图片的url)</code></p>
+<h2 id="列表">列表</h2>
+<p><strong>无序列表:</strong></p>
+<pre><code>-   Tony
+-   Amy
+-   Louis
+</code></pre>
+<p><strong>有序列表则使用数字接着一个英文句点：</strong></p>
+<pre><code>1.  Apple
+2.  Bird
+3.  Cat
+</code></pre>
+<h2 id="居中与居右">居中与居右</h2>
+<p>单独一行的时候，<code>[文本内容]</code>表示居中对齐，<code>[文本内容]]</code>表示居右(右侧再多一个<code>]</code>)，其它默认情况下都是居左。</p>
+<h2 id="内容引用">内容引用</h2>
+<p>用<code>&gt;</code>放在段首，之后是空格，输入文字:</p>
+<pre><code>&gt; 我
+&gt; 随风飘荡
+</code></pre>
+<h2 id="分割线">分割线</h2>
+<p><strong><code>-</code>加上空格组成，三个以上:</strong></p>
+<pre><code>- - - - - -
+</code></pre>
 ]]></content>
     </entry>
 </feed>

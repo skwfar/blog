@@ -1,11 +1,10 @@
 <html>
-
 <head>
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>友情链接 - 笔记</title>
+<title>关于 Markdown | 笔记</title>
 
 <link rel="shortcut icon" href="https://skwfar.github.io/favicon.ico?v=1597202354647">
 
@@ -26,12 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
-
 <body>
 <div class="main gt-bg-theme-color-first">
-        <div class="main-content">
-            <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -87,28 +85,81 @@
     </div>
 </nav>
 
-            <div class="post-container">
-                <div class="post-detail">
-                    <article>
-                        <!-- <div class="post-content-wrapper"> -->
-                            <div class="post-content">
-                                <div class="friends-desc">
-                                    
-                                </div>
-                                <h3 id="linklist">友链列表</h3>
-                                
-                                    
-                                
-                            </div>
-                        <!-- </div> -->
-                    </article>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    关于 Markdown
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2016-07-27 ·
+                    </time>
+                    
+                        <a href="https://skwfar.github.io/tag/n34-jx8rsw/" class="post-tags">
+                            # Markdown
+                        </a>
+                    
                 </div>
-                
-            </div>
+                <div class="post-content">
+                    <p>由于搭建静态博客Hexo的原因，第一次认真的学习了一下关于Markdown的写法，记录一下</p>
+<h2 id="基本语法">基本语法</h2>
+<h3 id="标题">标题</h3>
+<pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre>
+<p>分别对应HTML中的<code>&lt;h1&gt;一级标题&lt;/h1&gt;</code>，以此类推。</p>
+<p><code>**用两个星号标记起来，表示加粗**</code>，<code>*一个星号，表示斜体*</code>，<code>~~这样子表示删除~~</code>，这些就是最基本的语法了。</p>
+<h2 id="插入链接">插入链接</h2>
+<p><strong>插入链接:</strong><br>
+这是一个 <code>[链接](http://url.com/)</code></p>
+<p><strong>快速链接:</strong><br>
+只需在网址头尾用尖括号包裹，比如<code>&lt;http://url.com&gt;</code></p>
+<p><strong>特别支持:</strong><br>
+<code>[Google (target=_blank id=google_link)](google.com)</code>  其中内容括号内的<code>target=_blank id=google_link</code> 会自动扩展到最终 HTML 对应 A 标签下的属性，另外，<code>google.com</code> 作为一个域名，不需要补全<code>http://</code>, 最终会自动补全。</p>
+<h2 id="插入图片">插入图片</h2>
+<p>跟插入链接的方式很像，就是前面多一个<code>!</code>， 但是在一般的客户端编辑器，比如 <a href="http://markeditor.com">MarkEditor</a> 中直接拖入图片就可以。<br>
+<code>![)](图片的url)</code></p>
+<h2 id="列表">列表</h2>
+<p><strong>无序列表:</strong></p>
+<pre><code>-   Tony
+-   Amy
+-   Louis
+</code></pre>
+<p><strong>有序列表则使用数字接着一个英文句点：</strong></p>
+<pre><code>1.  Apple
+2.  Bird
+3.  Cat
+</code></pre>
+<h2 id="居中与居右">居中与居右</h2>
+<p>单独一行的时候，<code>[文本内容]</code>表示居中对齐，<code>[文本内容]]</code>表示居右(右侧再多一个<code>]</code>)，其它默认情况下都是居左。</p>
+<h2 id="内容引用">内容引用</h2>
+<p>用<code>&gt;</code>放在段首，之后是空格，输入文字:</p>
+<pre><code>&gt; 我
+&gt; 随风飘荡
+</code></pre>
+<h2 id="分割线">分割线</h2>
+<p><strong><code>-</code>加上空格组成，三个以上:</strong></p>
+<pre><code>- - - - - -
+</code></pre>
 
+                </div>
+            </article>
+        </div>
 
+        
 
-            <div class="site-footer gt-c-content-color-first">
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">Sic mundus creatus est</div>
     <div class="social-container">
         
@@ -138,8 +189,7 @@
   hljs.initHighlightingOnLoad()
 </script>
 
-        </div>
     </div>
+</div>
 </body>
-
 </html>
